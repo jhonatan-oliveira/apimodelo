@@ -5,6 +5,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseStatus;
@@ -38,7 +39,7 @@ public class CadastraEmployeeServiceImpl implements CadastraEmployeeService {
 	@Override
 	@ResponseStatus(HttpStatus.CREATED)
 	@RequestMapping(method = RequestMethod.POST)
-	public Employee save(Employee Employee) {
+	public Employee save(@RequestBody Employee Employee) {
 		return EmployeeRepository.save(Employee);
 	}
 }

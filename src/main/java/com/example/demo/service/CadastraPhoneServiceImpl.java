@@ -5,6 +5,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseStatus;
@@ -37,7 +38,7 @@ public class CadastraPhoneServiceImpl implements CadastraPhoneService {
 	@Override
 	@ResponseStatus(HttpStatus.CREATED)
     @RequestMapping(method = RequestMethod.POST)
-	public Phone save(Phone phone) {
+	public Phone save(@RequestBody Phone phone) {
 		return phoneRepository.save(phone);
 	}
 }
